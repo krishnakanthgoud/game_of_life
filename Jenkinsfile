@@ -19,10 +19,10 @@ pipeline {
             }
         }
         stage('SonarQube Analysis') {
-            steps {
-                 tools {
-                 jdk 'JDK_8'
+           tools {
+                 jdk 'JDK_11'
                 }
+            steps {
                 withSonarQubeEnv('mysonarsever') {  // Replace 'SonarQube' with your server name
                     sh """
                         mvn sonar:sonar \
