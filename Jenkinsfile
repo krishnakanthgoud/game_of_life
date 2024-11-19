@@ -20,9 +20,12 @@ pipeline {
         }
         stage('SonarQube Analysis') {
             steps {
+                 tools {
+                 jdk 'JDK_8'
+                }
                 withSonarQubeEnv('mysonarsever') {  // Replace 'SonarQube' with your server name
                     sh """
-                        mvn clean install sonar:sonar \
+                        mvn sonar:sonar \
                        -Dsonar.projectKey=gameoflife \
                        -Dsonar.host.url=http://18.60.216.4:9000 \
                        -Dsonar.login=sqp_ddf540b21aa645968a265f975302033f3db387ed
