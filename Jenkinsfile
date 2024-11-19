@@ -20,7 +20,7 @@ pipeline {
         }
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('SONAR') {  // Replace 'SonarQube' with your server name
+                withSonarQubeEnv('mysonarsever') {  // Replace 'SonarQube' with your server name
                     sh """
                         mvn sonar:sonar \
                        -Dsonar.projectKey=gameoflife \
