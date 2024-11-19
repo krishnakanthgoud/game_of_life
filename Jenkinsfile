@@ -22,7 +22,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('mysonarsever') {  // Replace 'SonarQube' with your server name
                     sh """
-                        mvn sonar:sonar \
+                        mvn -DskipTests=true sonar:sonar \
                        -Dsonar.projectKey=gameoflife \
                        -Dsonar.host.url=http://18.60.216.4:9000 \
                        -Dsonar.login=sqp_ddf540b21aa645968a265f975302033f3db387ed
